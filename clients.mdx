@@ -38,6 +38,7 @@ This page provides an overview of applications that support the Model Context Pr
 | [OpenSumi][OpenSumi]                        | ❌          | ❌        | ✅      | ❌         | ❌    | Supports tools in OpenSumi                                                  |
 | [Daydreams Agents][Daydreams]              | ✅          | ✅        | ✅      | ❌         | ❌    | Support for drop in Servers to Daydreams agents                             |
 | [Apify MCP Tester][Apify MCP Tester]  | ❌         | ❌         | ✅       | ❌          | ❌     | Supports tools |
+| [BayesChat][BayesChat]                | ❌          | ❌        | ✅      | ❌         | ❌    | Supports tools for remote MCP servers on iOS and macOS.                     |
 
 
 
@@ -55,6 +56,7 @@ This page provides an overview of applications that support the Model Context Pr
 [Superinterface]: https://superinterface.ai
 [5ire]: https://github.com/nanbingxyz/5ire
 [Apify MCP Tester]: https://apify.com/jiri.spilka/tester-mcp-client
+[BayesChat]: https://apps.apple.com/app/id6777948055
 [BeeAI Framework]: https://i-am-bee.github.io/beeai-framework
 [fast-agent]: https://github.com/evalstate/fast-agent
 [mcp-agent]: https://github.com/lastmile-ai/mcp-agent
@@ -323,6 +325,18 @@ It uses plain JavaScript (old-school style) and is hosted on Apify, allowing you
 - Connects to any MCP server via SSE.
 - Works with the [Apify MCP Server](https://apify.com/apify/actors-mcp-server) to interact with one or more Apify [Actors](https://apify.com/store).
 - Dynamically utilizes tools based on context and user queries (if supported by the server).
+
+### BayesChat
+
+[BayesChat](https://bayeschat.xyz) is a native iOS and macOS chat client that connects to remote MCP servers and runs their tools inside the conversation.
+
+**Key features:**
+- Connects to remote MCP servers over Streamable HTTP, with session handling and bearer or custom header authentication.
+- Runs tool calls inline in the chat loop, with retry after a failure and cancellation while a call is in flight.
+- Keeps provider credentials in the on-device Keychain and requires no account.
+- Lets you bring any OpenAI-compatible endpoint, so the model and the MCP tools are chosen independently.
+
+> ⓘ Note: BayesChat connects to remote (HTTP) MCP servers only. On iOS the app cannot spawn local processes, so stdio servers do not apply.
 
 ## Adding MCP support to your application
 
